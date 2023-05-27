@@ -54,3 +54,9 @@ group :development do
   # gem "spring"
 end
 
+
+gem "factory_bot", "~> 6.2"
+
+gem "factory_bot_rails", "~> 6.2"
+
+gem "faker", "~> 3.2"
