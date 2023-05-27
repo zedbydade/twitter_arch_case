@@ -16,6 +16,9 @@ gem 'devise'
 
 gem 'devise-jwt' 
 gem 'rack-cors'
+gem 'rspec'
+gem 'rspec-rails'
+gem 'shoulda-matchers'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
