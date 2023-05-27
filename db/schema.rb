@@ -10,9 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_26_011029) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_27_010533) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "tweets", force: :cascade do |t|
+    t.integer "sender_id"
+    t.bigint "user_id"
+    t.bigint "sender_id_id"
+    t.string "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sender_id_id"], name: "index_tweets_on_sender_id_id"
+    t.index ["user_id"], name: "index_tweets_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,4 +39,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_26_011029) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "tweets", "users"
+  add_foreign_key "tweets", "users", column: "sender_id_id"
 end
