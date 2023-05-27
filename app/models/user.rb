@@ -12,4 +12,6 @@ class User < ApplicationRecord
 
   has_many :tweets, foreign_key: 'sender_id'
 
+  validates :email, :first_name, :last_name, presence: true
+
 end
