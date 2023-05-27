@@ -19,6 +19,10 @@ default: &default
   encoding: unicode
   
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+  database: twitter_arch_development
+  username: postgres
+  password: teste123
 
 development:
   <<: *default
@@ -30,6 +34,8 @@ development:
 test:
   <<: *default
   database: twitter_arch_test
+  username: postgres
+  password: teste123
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
