@@ -62,3 +62,5 @@ gem "factory_bot_rails", "~> 6.2"
 gem "faker", "~> 3.2"
 
 gem "redis-rb", "~> 9001.0"
+
+gem "redis", "~> 5.0"
